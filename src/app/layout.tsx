@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
-const nunito = Nunito({ subsets: ["latin"] });
+import { Header } from "@/components/header/Header";
 import "./globals.css";
+
+const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gestor de Cursos",
@@ -19,7 +21,8 @@ export default function RootLayout({
       lang="pt-br"
     >
       <body className={nunito.className}>
-        <div className="min-h-full flex flex-col">{children}</div>
+        <Header />
+        <div className="min-h-screen flex flex-col">{children}</div>
       </body>
     </html>
   );
